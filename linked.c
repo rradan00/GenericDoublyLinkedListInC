@@ -1,6 +1,13 @@
 #include <stdlib.h>
 #include "linked.h"
 
+Node* createNode(unsigned int size){
+    Node* node = malloc(sizeof(Node) + size);
+    node->next = NULL;
+    node->prev = NULL;
+    return node;
+}
+
 Node* getPrev(Node* node){
     return node->prev;
 }

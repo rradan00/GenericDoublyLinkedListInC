@@ -31,14 +31,24 @@ This works because `Node` and `Person` both begin in the same memory location, b
 The library also uses **function pointers** to **"override"** functions executed over nodes according to the specifics of the child class in methods like printing and sorting. 
 
 ## Methods
-
-Presume:
+Presume for the following examples:
 ```c
 Person* alex = ...;
 Person* bob = ...;
 Person* charlie = ...;
 // etc... where
 // Alex -> Bob -> Charlie -> David...
+```
+Create:
+```c
+Person* alex = createNode(sizeof(Person));
+```
+Foreach:
+```c
+Person* p;
+linkedListForeach(p, list){
+    printf("%s \n", p->name);
+}
 ```
 Basic operators
 ```c

@@ -3,10 +3,14 @@
 
 #include <stdio.h>
 
+#define linkedListForeach(_iterator, _list) for(_iterator = getFirst(_list); _iterator != NULL; _iterator = getNext(_iterator))
+
 typedef struct _node {
     struct _node* prev;
     struct _node* next;
 } Node;
+
+Node* createNode(unsigned int size);
 
 Node* getPrev(Node* node);
 Node* getNext(Node* node);

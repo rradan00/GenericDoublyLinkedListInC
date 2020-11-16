@@ -21,7 +21,10 @@ int main(int argc, const char * argv[]) {
     Person* bob     = newPerson("Bob");
     Person* charlie = newPerson("Charlie");
     Person* david   = newPerson("David");
-    Person* eric    = newPerson("Eric");
+    
+    //alternative method
+    Person* eric    = createNode(sizeof(Person));
+    strcpy(eric->name, "Eric");
     
     /*
         Set up list as follows:
@@ -46,6 +49,13 @@ int main(int argc, const char * argv[]) {
 
     printf("Library print:\n");
     printNodeList(getFirst(alex), printPerson);
+    printf("\n");
+    
+    printf("Foreach print\n");
+    Person* p;
+    linkedListForeach(p, alex){
+        printf("%s \n", p->name);
+    }
     printf("\n");
     
     /*
